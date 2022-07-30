@@ -5,6 +5,7 @@ import {
 
 import './App.css'
 import Contador from "./components/Pages/Contador/Contador";
+import PokeSaver from "./components/Pages/PokeSaver/PokeSaver";
 import PrevisaoTempo from "./components/Pages/PrevisaoTempo/PrevisaoTempo";
 
 function App() {
@@ -15,6 +16,10 @@ function App() {
         <h1>OI</h1>
         <Contador/>
         <PrevisaoTempo/>
+
+        <br />
+        <br />
+        <PokeSaver />
 
         
       
