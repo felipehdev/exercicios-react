@@ -1,9 +1,10 @@
 import React from "react";
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 const PrevisaoTempo = () => {
     const [ city, setCity] = useState('Curitiba') //adicionar local do usuario no futuro.
     const [ astro, setAstro] = useState(null)
+    const [ emoji, setEmoji] = useState('🧛‍♂️')
     
 
 
@@ -20,7 +21,8 @@ const PrevisaoTempo = () => {
     const astronomyRequest = '/astronomy.json'
     const lang = 'pt'
     const days = '123' //requeride with forecast parameter
-    
+
+    //respostas
 
 
     const handleRequest = async () => {
@@ -36,7 +38,15 @@ const PrevisaoTempo = () => {
       })
     }
 
- 
+    // funçao que transforma a string com fase da lua em um emoji
+    useEffect(() => {
+        if (astro ? ( astro.astronomy.astro.moon_phase === 'New Moon') : null) {
+            setEmoji('🌑')
+        }
+    })
+    
+    
+   
 
   return (
     <>
@@ -52,6 +62,13 @@ const PrevisaoTempo = () => {
         {
             astro ? (
                  <p>{astro.astronomy.astro.moon_phase}</p>
+            ) : null
+        }
+      </div>
+      <div>
+        {
+            astro ? (
+                <p>{emoji}</p>
             ) : null
         }
       </div>
