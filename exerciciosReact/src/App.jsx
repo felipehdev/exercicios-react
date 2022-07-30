@@ -1,13 +1,11 @@
 import React from "react";
 import {
-  BrowserRouter as Router,
-  
-  Route,
-  Link
+  BrowserRouter as Router,  
 } from "react-router-dom";
 
 import './App.css'
 import Contador from "./components/Pages/Contador/Contador";
+import PrevisaoTempo from "./components/Pages/PrevisaoTempo/PrevisaoTempo";
 
 function App() {
 
@@ -16,6 +14,7 @@ function App() {
       <Router>
         <h1>OI</h1>
         <Contador/>
+        <PrevisaoTempo/>
 
         
       

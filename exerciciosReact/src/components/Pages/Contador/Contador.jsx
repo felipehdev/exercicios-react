@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 
-const Contador = (props) => {
+const Contador = () => {
   const [time, setTime] = useState(0);
 
   const incrementer = () => {
@@ -11,7 +11,7 @@ const Contador = (props) => {
     setTime((prevTime) => prevTime - 1);
   };
 
-  console.log(props);
+  
   return (
     <>
       <h1>Contador</h1>
